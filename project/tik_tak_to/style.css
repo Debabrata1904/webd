@@ -1,0 +1,48 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#111;
+  color:white;
+}
+
+#message{
+  font-size:24px;
+  margin-bottom:20px;
+  margin-top:20px;
+  color: red;
+}
+.board{
+  display:grid;
+  grid-template-columns:repeat(3,100px);
+  gap:10px;
+  margin-top:20px;
+}
+
+.box{
+  width:100px;
+  height:100px;
+  background:#222;
+  border:2px solid white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:40px;
+  cursor:pointer;
+}
+
+button{
+  margin-top:20px;
+  padding:10px 20px;
+  cursor:pointer;
+  font-size:16px;
+}
