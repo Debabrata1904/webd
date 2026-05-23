@@ -1,6 +1,8 @@
 import express from "express";
 import numberRouter from "./routes/user_route.js";
+
 const app = express();
+app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use('/numbers', numberRouter);
 
