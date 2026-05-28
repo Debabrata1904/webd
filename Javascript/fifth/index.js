@@ -1,10 +1,12 @@
 import express from "express"
 import dotenv from "dotenv"
 import connectDB from "./config/db.js"
+import router from "./routes/userRoutes.js"
 
 dotenv.config() // Load environment variables from .env file
 
 await connectDB() // Connect to MongoDB
+app.use('/', router);
 
 const app = express()
 
