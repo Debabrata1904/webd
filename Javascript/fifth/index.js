@@ -6,11 +6,12 @@ import router from "./routes/userRoutes.js"
 dotenv.config() // Load environment variables from .env file
 
 await connectDB() // Connect to MongoDB
-app.use('/', router);
 
 const app = express()
 
 app.use(express.json())
+
+app.use('/', router);
 
 app.get("/health", (req, res) => {
     res.status(200).json({ message: "Server is healthy" })

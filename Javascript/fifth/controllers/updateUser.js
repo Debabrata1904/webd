@@ -5,10 +5,10 @@ const updateUser = async (req, res) => {
         const { id } = req.params; // get user ID from request parameters
         const updatedData = req.body; // get updated user data from request body
 
-        const user = await User.findByIdAndUpdate(id, updatedData, { new: true }); // find the user by ID and update them
+        const user = await User.findByIdAndUpdate(id, updatedData, { new: true , runValidators: true }); // find the user by ID and update them
 
         if (!user) {
-            return res.status(404).json({ error: "User not found" });
+            return res.status(404).json({ error: "User not found"}); // if user not found, send a 404 response
         }
 
         res.status(200).json({ User: user }); // send the updated user as response
